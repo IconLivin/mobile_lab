@@ -14,8 +14,24 @@ Page {
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
             MenuItem {
-                text: qsTr("Show Page 2")
+                text: qsTr("Кубики")
                 onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
+            }
+            MenuItem {
+                text: qsTr("row column")
+                onClicked: pageStack.push(Qt.resolvedUrl("ThirdPage.qml"))
+            }
+            MenuItem {
+                text: qsTr("grid")
+                onClicked: pageStack.push(Qt.resolvedUrl("FourthPage.qml"))
+            }
+            MenuItem {
+                text: qsTr("Перемещение и анимация")
+                onClicked: pageStack.push(Qt.resolvedUrl("FifthPage.qml"))
+            }
+            MenuItem {
+                text: qsTr("Диалог")
+                onClicked: pageStack.push(Qt.resolvedUrl("SixthPage.qml"))
             }
         }
 
@@ -34,26 +50,9 @@ Page {
             }
             Label {
                 x: Theme.horizontalPageMargin
-                text: qsTr("Hello, Sailors!")
+                text: qsTr("Hello Sailors")
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeExtraLarge
-            }
-            Label {
-                id: label
-                x: Theme.horizontalPageMargin
-                property int count: 0
-                text: count
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeExtraLarge
-            }
-
-            Button {
-                id: button
-                text: qsTr("Increase value")
-                width: parent.width
-                onClicked: {
-                    label.count++;
-                }
             }
         }
     }

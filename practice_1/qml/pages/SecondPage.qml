@@ -2,29 +2,38 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-    id: page
+    id: page2
 
-    // The effective value will be restricted by ApplicationWindow.allowedOrientations
-    allowedOrientations: Orientation.All
-
-    SilicaListView {
-        id: listView
-        model: 20
+   Item {
         anchors.fill: parent
-        header: PageHeader {
-            title: qsTr("Nested Page")
+        Rectangle{
+            id:red
+            color: "red"
+            width: 200
+            height: 200
         }
-        delegate: BackgroundItem {
-            id: delegate
-
-            Label {
-                x: Theme.horizontalPageMargin
-                text: qsTr("Item") + " " + index
-                anchors.verticalCenter: parent.verticalCenter
-                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+        Rectangle{
+            id:green
+            color: "lightgreen"
+            anchors.left: red.right
+            anchors.top: red.verticalCenter
+            width: 200
+            height: 200
+        }
+        Rectangle{
+            id:blue
+            color: "blue"
+            z:10
+            anchors.left: green.horizontalCenter
+            width: 200
+            height: 200
+            Text{
+                text: "Квадрат"
+                color: "white"
+                anchors.centerIn: parent
+                font.family: "Roboto"
+                font.pointSize: 30
             }
-            onClicked: console.log("Clicked " + index)
         }
-        VerticalScrollDecorator {}
-    }
+   }
 }
