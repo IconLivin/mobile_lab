@@ -10,24 +10,28 @@ Dialog{
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
             MenuItem {
-                text: qsTr("Домой")
+                text: qsTr("Menu")
                 onClicked: pageStack.push(Qt.resolvedUrl("FirstPage.qml"))
             }
             MenuItem {
-                text: qsTr("Кубики")
+                text: qsTr("Cubes")
                 onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
             }
             MenuItem {
-                text: qsTr("row column")
+                text: qsTr("Rows and columns")
                 onClicked: pageStack.push(Qt.resolvedUrl("ThirdPage.qml"))
             }
             MenuItem {
-                text: qsTr("grid")
+                text: qsTr("Grid")
                 onClicked: pageStack.push(Qt.resolvedUrl("FourthPage.qml"))
             }
             MenuItem {
-                text: qsTr("Перемещение и анимация")
+                text: qsTr("Translate Rotate")
                 onClicked: pageStack.push(Qt.resolvedUrl("FifthPage.qml"))
+            }
+            MenuItem {
+                text: qsTr("Dialog")
+                onClicked: pageStack.push(Qt.resolvedUrl("SixthPage.qml"))
             }
         }
     }
@@ -57,5 +61,5 @@ Dialog{
 
      DialogHeader{}
     }
-    onAccepted: console.log(parseInt(tf1.text)+parseInt(tf2.text))
+    onAccepted: console.log(parseInt(tf1.text) + parseInt(tf2.text))
 }
